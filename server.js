@@ -31,7 +31,7 @@ const host = process.env.HOST
 const webhook = process.env.WEBHOOK || "trello-webhook"
 
 //default route for debugging porpouses
-server.get('/', (req, res) => {
+server.get('/trello-webhook', (req, res) => {
     res.send("Trello server is running and active")
     console.log(webhook)
 })
@@ -39,10 +39,16 @@ server.get('/', (req, res) => {
 //main server function - webhook listener
 
 server.post(`/${webhook}`, (req, res) => {
+
+    console.log("🚨 ¡WEBHOOK RECIBIÓ UNA PETICIÓN! 🚨");
+    console.log("Hora:", new Date().toISOString());
+
     res.status(200).send('OK')
 
     // req body data
     const { action, model } = req.body;
+
+    console.log(action.data)
 
     //‘updateCard’ event (card update) verification
     if (action && action.type === 'updateCard' && action.data && action.data.listAfter && action.data.listBefore) {
@@ -53,11 +59,11 @@ server.post(`/${webhook}`, (req, res) => {
         const cardName = action.data.card.name;
 
         //Card movement logging
-        console.log(`Card moved: "${cardName}" from "${oldListName}" to "${newListName}"`)
+        console.log(`Card moved: "${cardName}" from "${oldListID}" to "${newListID}"`)
 
-        for (list of lists){
+        for (const list of lists){
             if (list.id === newListID) {
-            console.log(`A card movement was detected: "${newListName}". Processing...`)}
+            console.log(`A card movement was detected: "${newListID}". Processing...`)}
         }
 
     }
