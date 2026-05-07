@@ -1,0 +1,114 @@
+[
+    {
+        "id": "6909e6f3af1a024b41b74efc",
+        "name": "Proyecto en preparación",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 16384,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "6909e6f71149d366a187c457",
+        "name": "Inicio de proyecto",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 32768,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "6909e6fe306ad9aff91fec30",
+        "name": "Proyecto entregado",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 65536,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "69fa28a61b7cbb3833120734",
+        "name": "Factura en aviso",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 69632,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "69fa287f1c7b5b266c531404",
+        "name": "Factura pagada",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 84480,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "69fa28b468c110ab922da6c0",
+        "name": "Factura vencida",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 95232,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "69f9c3bf907995cd0b329fd1",
+        "name": "Fin Garantía",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 98304,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    },
+    {
+        "id": "69fa1dc530891d5ad8222c8e",
+        "name": "Proceso completado",
+        "closed": false,
+        "color": null,
+        "idBoard": "679fc6679018aa4c233ee6cf",
+        "pos": 131072,
+        "subscribed": false,
+        "softLimit": null,
+        "type": null,
+        "datasource": {
+            "filter": false
+        }
+    }
+]
