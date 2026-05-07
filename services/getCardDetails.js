@@ -38,7 +38,7 @@ const getCardDetails = async (cardId) => {
             attachments: attachments
         };
 
-    }catch{
+    }catch(error){
         console.error(`Error fetching card data ${cardId}:`, error.message);
         throw new Error(`Card detalis fetching failed ${cardId}`);
     }
