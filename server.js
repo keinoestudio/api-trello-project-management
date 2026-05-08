@@ -1,3 +1,4 @@
+
 //Libraries import
 import express from "express"
 import dotenv from "dotenv"
@@ -15,6 +16,7 @@ dotenv.config()
 
 import getCardDetails from "./services/getCardDetails.js"
 import sendEmailForCard from "./services/sendEmailForCard.js"
+import cardFormatting from "./utils/cardFormatting.js"
 
 //Data import
 
@@ -82,6 +84,7 @@ server.post(`/${webhook}`, async (req, res) => {
             const cardDetails = await getCardDetails(cardId);
             await sendEmailForCard(cardDetails, newListID, transporter);
             // console.log(cardDetails)
+            // console.log(cardFormatting(cardDetails))
         }catch(error){
             console.error(`Error at card processing ${cardName}:`, error.message);
         }
