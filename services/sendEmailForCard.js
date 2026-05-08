@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"
 import axios from "axios";
 import extractEmailsFromCustomFields from "../utils/extractEmailsFromCustomFields.js";
-import projectStarted from "../emails/projectStarted.js";
+import htmlBuilder from "./htmlBuilder.js";
 
 
 async function sendEmailForCard(cardDetails, targetListID, transporter) {
@@ -29,11 +29,11 @@ async function sendEmailForCard(cardDetails, targetListID, transporter) {
     } else if (targetListID === "69f9c3bf907995cd0b329fd1") {
         subject = `El periodo de garantía de este proyecto ha vencido: ${cardDetails.name}`;
     } else {
+        console.log("Program stopped due to the target list is not valid")
         return;
     }
 
-    // const htmlContent = buildEmailHtml(cardDetails, targetListID, emails);
-    const htmlContent = projectStarted(cardDetails);
+    const htmlContent = htmlBuilder(targetListID, cardDetails)
 
     const isImageByExtension = (filename) => {
         const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg', '.ico'];
@@ -43,7 +43,7 @@ async function sendEmailForCard(cardDetails, targetListID, transporter) {
 
     for (const att of cardDetails.attachments) {
         if (isImageByExtension(att.name)) {
-            console.log(`🖼️ Imagen omitida (por extensión): ${att.name}`);
+            console.log(`Image not attached (by extension): ${att.name}`);
             continue;
         }
         try {
