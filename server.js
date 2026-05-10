@@ -82,9 +82,7 @@ server.post(`/${webhook}`, async (req, res) => {
 
         try{
             const cardDetails = await getCardDetails(cardId);
-            await sendEmailForCard(cardDetails, newListID, transporter);
-            // console.log(cardDetails)
-            // console.log(cardFormatting(cardDetails))
+            // await sendEmailForCard(cardDetails, newListID, transporter);
         }catch(error){
             console.error(`Error at card processing ${cardName}:`, error.message);
         }
