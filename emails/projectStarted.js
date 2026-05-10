@@ -1,424 +1,350 @@
+import queryfyDate from "../utils/queryfyDate.js";
+
+
 const projectStarted = (cardDetails) => {
-    return `
-    <!DOCTYPE html>
-<html
-  lang="es"
-  dir="ltr"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=yes"
-    />
-    <meta
-      name="format-detection"
-      content="telephone=no, email=no, address=no, date=no, url=no"
-    />
-    <meta name="x-apple-disable-message-reformatting" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="supported-color-schemes" content="light dark" />
-    <title>Inicio de proyecto</title>
-    <!--[if mso]>
-      <noscript>
-        <xml>
-          <o:OfficeDocumentSettings>
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-          </o:OfficeDocumentSettings>
-        </xml>
-      </noscript>
-    <![endif]-->
+    const link = `https://keinoestudio.com/permanent/templates/emails/project-started?name=${cardDetails.name}&deliveryTime=${cardDetails.deliveryTime}&deliveryDate=${queryfyDate(cardDetails.deliveryDate)}`
 
-    <style type="text/css">
-
-      table {
-        border-spacing: 0;
-        border-collapse: collapse;
-      }
-      td {
-        padding: 0;
-      }
-      p {
-        font-size: 16px;
-      }
-      img {
-        border: 0;
-      }
-      a {
-        text-decoration: none;
-        color: #006bff;
-        font-size: 16px;
-      }
-      .ExternalClass {
-        width: 100%;
-      }
-      .ExternalClass,
-      .ExternalClass p,
-      .ExternalClass span,
-      .ExternalClass font,
-      .ExternalClass td,
-      .ExternalClass div {
-        line-height: 100%;
-      }
-
-      a[x-apple-detectors="true"] {
-        color: inherit !important;
-        text-decoration: none !important;
-      }
-
-      @media screen and (max-width: 599.88) {
-      }
-      @media screen and (max-width: 399.88) {
-      }
-      :root {
-        color-scheme: light dark;
-        supported-color-schemes: light dark;
-      }
-      @media (prefers-color-scheme: dark) {
-        body,
-        table {
-          background: #f0f5ff !important;
-          color: #000d21;
-        }
-        .darkmode-transparent {
-          background-color: transparent !important;
-        }
-        [data-ogsc] body,
-        table {
-          background: #f0f5ff !important;
-          color: #000d21;
-        }
-        [data-ogsc] .darkmode-transparent {
-          background-color: transparent !important;
-        }
-        u + .body .gmail-blend-screen {
-          background: #000d21 !important;
-          mix-blend-mode: screen;
-        }
-        u + .body .gmail-blend-difference {
-          background: #000d21 !important;
-          mix-blend-mode: difference;
-        }
-      }
-    </style>
-
-    <!--[if mso]>
-      <style type="text/css">
-        @font-face {
-          font-family: "Funnel Sans";
-          src: url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
-        }
-        body {
-          background-color: #ffffff !important;
-        }
-        body,
-        table,
-        td,
-        p,
-        a {
-          font-family: "Funnel Sans", Arial, Helvetica, sans-serif;
-        }
-        table {
-          border-spacing: 0 !important;
-          border-collapse: collapse !important;
-        }
-      </style>
-    <![endif]-->
-  </head>
-  <body
-    class="body"
-    xml:lang="es"
-    style="margin: 0; padding: 0; min-width: 100%; background-color: #ffffff"
-  >
-    <div
-      style="
-        width: 100%;
-        table-layout: fixed;
-        background-color: #ffffff;
-        font-family: 'Funnel Display', Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        margin: 0 auto 40px;
-      "
-    >
-      <div
-        style="
-          max-width: 600px;
-          margin: 0 auto;
-          background-color: #f0f5ff;
-          color: #000d21;
-          font-family: 'Funnel Display', Arial, Helvetica, sans-serif;
-          box-shadow: rgba(0, 0, 0, 0.2);
-        "
-      >
-        <div
-          style="
-            font-size: 0;
-            color: #f0f5ff;
-            mso-line-height-rule: exactly;
-            line-height: 0;
-            display: none;
-            max-width: 0;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            mso-hide: all;
-          "
-        >
-          Ponemos en marcha las tareas de este proyecto. Te iremos informando de los cambios relevantes.
-          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
-        </div>
-        <!--[if mso]>
-          <table
-            width="600"
-            align="center"
-            style="border-collapse: collapse; border-spacing: 0; color: #000d21"
-            role="presentation"
-          >
-        <tr>
-        <td style="padding: 0">
-        <![endif]-->
-
-        <table
-          align="center"
-          style="
-            border-spacing: 0;
-            border-collapse: collapse;
-            color: #000d21;
-            font-family: 'Funnel Sans', Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            background-color: #f0f5ff;
-            margin: 0 auto;
-            padding: 0;
-            width: 100%;
-            max-width: 600px;
-          "
-          role="presentation"
-        >
-          <tr>
-            <td style="padding: 0">
-              <table width="100%" style="border-spacing: 0" role="presentation">
-                <tr>
-                  <td
-                    style="
-                      padding: 20px 0 20px 0;
-                      background-color: #006bff;
-                      text-align: center;
-                    "
-                  >
-                    <a href="https://keinoestudio.com" target="_blank"
-                      ><img
-                        src="https://keinoestudio.com/assets/logo_blanco.png"
-                        alt="keino estudio"
-                        title="Enlace a la web de keino estudio"
-                        width="256"
-                        style="border: 0"
-                    /></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="
-                      padding: 25px 20px 8px 20px;
-                      text-align: center;
-                      font-size: 16px;
-                    "
-                  >
-                    <h1
-                      style="
-                        font-size: 25px;
-                        line-height: 30px;
-                        text-align: center;
-                        color: #006bff;
-                        margin: 0;
-                        font-family: Arial, Helvetica, sans-serif;
-                        padding: 0 0 16px;
-                      "
-                    >
-                      Ponemos en marcha las tareas de este proyecto.
-                    </h1>
-                    <h2
-                      style="
-                        font-size: 18px;
-                        line-height: 25px;
-                        color: #006bff;
-                        text-align: center;
-                        margin: 0;
-                        padding: 0 0 16px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-weight: 400;
-                      "
-                    >
-                      Te iremos informando de los cambios relevantes.
-                    </h2>
-                    <p
-                      style="font-size: 16px; line-height: 20px; color: #000d21"
-                    >
-                      Este email se envía a modo informativo para comunicar que las tareas asociadas al proyecto <span style="color: #006bff">${cardDetails.name}</span> han comenzado. Te iremos informando de los cambios más relevantes. Del mismo modo, comunicaremos el fin de las tareas cumpliendo con los plazos establecidos.
-                    </p>
-                    <p
-                      style="font-size: 16px; line-height: 20px; color: #000d21"
-                    >
-                      Por ahora no es necesario ninguna intervención por tu parte, aunque es posible que a lo largo del proceso se te solicite información relevante, como accesos, direcciones de correo o permisos para acceso a servicios por parte de terceros. A fin de agilizar los trámites, rogamos prestar atención a las comunicaciones de Keino Estudio.
-                    </p>
-                    <p
-                      style="font-size: 16px; line-height: 20px; color: #000d21"
-                    >
-                      A modo recordatorio, indicamos de nuevo que el plazo estimado de entrega es de <span style="color: #006bff">${cardDetails.customFields["69fa717ebd5260ab1df08d15"].value} ${cardDetails.customFields["69fa717ebd5260ab1df08d15"].value == 1 ? "día hábil" : "días hábiles"}.</span> Mientras, estamos a tu disposición para resolver cualquier duda a través de nuestros canales de comunicación.
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 20px 40px 20px; text-align: center">
-                    <h3
-                      style="
-                        font-size: 18px;
-                        line-height: 24px;
-                        text-align: center;
-                        color: #006bff;
-                        margin: 0;
-                      "
-                    >
-                      Gracias por confiar en keino estudio<sup style="font-size: 8px;">®</sup>
-                    </h3>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="
-                      padding: 20px 0 8px 0;
-                      text-align: center;
-                      background-color: #000d21;
-                    "
-                  >
-                    <a
-                      href="https://keinoestudio.com?from=email-footer"
-                      target="_blank"
-                      style="margin: 0"
-                      ><img
-                        src="https://keinoestudio.com/assets/logo_azul.png"
-                        alt="keino estudio"
-                        title="web keino estudio"
-                        width="160"
-                        style="border: 0" />
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="
-                      padding: 16px 20px 16px 20px;
-                      background-color: #000d21;
-                      text-align: center;
-                    "
-                  >
-                    <p
-                      style="
-                        text-align: center;
-                        font-size: 12px;
-                        color: #f0f5ff;
-                      "
-                    >
-                      <a
-                        href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd2e7d05d915e163:0xf31e98f27204a474?sa=X&ved=1t:8290&ictx=111"
-                        style="
-                          color: #f0f5ff;
-                          color: inherit;
-                          text-decoration: none;
-                        "
-                        target="_blank"
-                        >C&#8203;/Emilio González López, &#8203;32,
-                        15&#8203;011, A Coruña</a
-                      >
-                    </p>
-                    <p
-                      style="
-                        text-align: center;
-                        font-size: 12px;
-                        color: #f0f5ff;
-                      "
-                    >
-                      <a
-                        href="mailto:oficina@keinoestudio.com?from=work-completed-email"
-                        style="
-                          color: #f0f5ff;
-                          color: inherit;
-                          text-decoration: none;
-                        "
-                        target="_blank"
-                        >oficina@keinoestudio.com</a
-                      >
-                    </p>
-                    <p
-                      style="
-                        text-align: center;
-                        font-size: 12px;
-                        color: #f0f5ff;
-                      "
-                    >
-                      <a
-                        href="tel:881170845"
-                        style="
-                          color: #f0f5ff;
-                          color: inherit;
-                          text-decoration: none;
-                        "
-                        target="_blank"
-                        >(+34) 881 17 08 45</a
-                      >
-                    </p>
-                    <p
-                      style="
-                        text-align: center;
-                        font-size: 12px;
-                        color: #f0f5ff;
-                      "
-                    >
-                      En Keino Estudio somos respetuosos con la privacidad y los
-                      datos de nuestra comunidad. Puedes consultar nuestra
-                      <a
-                        href="https://keinoestudio.com/politica-privacidad"
-                        target="_blank"
-                        style="
-                          color: #006bff !important;
-                          color: inherit;
-                          text-decoration: none;
-                          font-size: 12px;
-                        "
-                        >política de privacidad</a
-                      >
-                      en este enlace. Si deseas dejar de recibir este tipo de
-                      comunicaciones, puedes solicitar la baja enviándonos un email a 
-                      <a
-                        href="mailto:oficina@keinoestudio.com?option=reject-communications"
-                        style="
-                          color: #006bff !important;
-                          color: inherit;
-                          text-decoration: none;
-                          font-size: 12px;
-                        "
-                        target="_blank"
-                        >oficina@keinoestudio.com</a
-                      >.
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        <!--[if mso]>
-        </td>
-        </tr>
-        </table>
-        <![endif]-->
-      </div>
-    </div>
-  </body>
-</html>
-
-    `
+    return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+            <html dir="ltr" lang="en">
+              <head>
+                <link
+                  rel="preload"
+                  as="image"
+                  href="https://www.keinoestudio.com/assets/next-gen-emails/ng-email-header.png" />
+                <link
+                  rel="preload"
+                  as="image"
+                  href="https://www.keinoestudio.com/assets/next-gen-emails/ng-footer-title.png" />
+                <link
+                  rel="preload"
+                  as="image"
+                  href="https://www.keinoestudio.com/assets/next-gen-emails/ng-keino-small.png" />
+                <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+                <meta name="x-apple-disable-message-reformatting" />
+              </head>
+              <body style="background-color:#E0DBDB">
+                <!--$--><!--html--><!--head--><!--body-->
+                <table
+                  border="0"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  role="presentation"
+                  align="center">
+                  <tbody>
+                    <tr>
+                      <td
+                        style="background-color:#E0DBDB;font-family:Arial, Helvetica, sans-serif">
+                        <table
+                          align="center"
+                          width="100%"
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          role="presentation"
+                          style="max-width:600px;margin:0 auto;padding:64px 12px 0">
+                          <tbody>
+                            <tr style="width:100%">
+                              <td>
+                                <table
+                                  align="center"
+                                  width="100%"
+                                  border="0"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  role="presentation"
+                                  style="padding:12px 24px">
+                                  <tbody style="width:100%">
+                                    <tr style="width:100%">
+                                      <td data-id="__react-email-column">
+                                        <p
+                                          style="font-size:12px;line-height:16px;margin-top:16px;margin-bottom:16px">
+                                          Si no puedes visualizar este email correctamente,
+                                          ábrelo en tu navegador a través de
+                                          <a
+                                            href="${link}"
+                                            style="color:#006bff;text-decoration-line:none"
+                                            target="_blank"
+                                            >este enlace</a
+                                          >.
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <table
+                                  align="center"
+                                  width="100%"
+                                  border="0"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  role="presentation">
+                                  <tbody style="width:100%">
+                                    <tr style="width:100%">
+                                      <td data-id="__react-email-column">
+                                        <table
+                                          align="center"
+                                          width="100%"
+                                          border="0"
+                                          cellpadding="0"
+                                          cellspacing="0"
+                                          role="presentation">
+                                          <tbody style="width:100%">
+                                            <tr style="width:100%">
+                                              <td
+                                                data-id="__react-email-column"
+                                                style="padding:24px;background-color:#f0f5ff;border-radius:8px">
+                                                <a
+                                                  href="https://keinoestudio.com/?from=email-header"
+                                                  style="color:#067df7;text-decoration-line:none"
+                                                  target="_blank"
+                                                  ><img
+                                                    src="https://www.keinoestudio.com/assets/next-gen-emails/ng-email-header.png"
+                                                    alt="keino estudio"
+                                                    style="width:100%"
+                                                    width="520"
+                                                /></a>
+                                                <h1
+                                                  style="color:#006bff;font-size:22px;font-weight:normal;padding:12px 0">
+                                                  Hemos comenzado las tareas de este
+                                                  proyecto.
+                                                </h1>
+                                                <p
+                                                  style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                  Este email se envía a modo informativo
+                                                  para comunicar que las tareas asociadas al
+                                                  proyecto
+                                                  <span style="color:#006bff"
+                                                    >${cardDetails.name}</span
+                                                  >
+                                                  han comenzado. A lo largo del proceso de
+                                                  desarrollo iremos informando de los
+                                                  cambios más relevantes. Del mismo modo,
+                                                  comunicaremos el fin de las tareas
+                                                  cumpliendo con los plazos establecidos.
+                                                </p>
+                                                <p
+                                                  style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                  Por ahora no es necesario ninguna
+                                                  intervención por tu parte, aunque es
+                                                  posible que a lo largo del proceso se
+                                                  solicite información, como accesos,
+                                                  direcciones de correo o permisos para
+                                                  acceso a servicios por parte de terceros.
+                                                  A fin de agilizar los trámites y cumplir
+                                                  con los plazos programados, rogamos
+                                                  prestar atención a las comunicaciones de
+                                                  keino estudio® y responder a la mayor
+                                                  brevedad posible.
+                                                </p>
+                                                <p
+                                                  style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                  A modo recordatorio, indicamos de nuevo
+                                                  que el plazo estimado de desarrollo es
+                                                  de <span style="color:#006bff"
+                                                    >${cardDetails.deliveryTime == 1 ? cardDetails.deliveryTime + ' día hábil' : cardDetails.deliveryTime + 'días hábiles'}</span
+                                                  >, por lo que mantenemos nuestro
+                                                  compromiso de entrega en fecha de
+                                                  <span style="color:#006bff">${cardDetails.deliveryDate}</span>
+                                                  Mientras, nos ponemos a disposición para
+                                                  resolver cualquier duda a través de
+                                                  nuestros canales de comunicación.
+                                                </p>
+                                                <p
+                                                  style="font-size:18px;line-height:22px;padding-bottom:24px;color:#006bff;margin-top:16px;margin-bottom:16px">
+                                                  Gracias por confiar en keino estudio<sup style="font-size:10px"
+                                                    >®</sup
+                                                  >
+                                                </p>
+                                                <table
+                                                  align="center"
+                                                  width="100%"
+                                                  border="0"
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                  role="presentation">
+                                                  <tbody style="width:100%">
+                                                    <tr style="width:100%">
+                                                      <td
+                                                        data-id="__react-email-column"
+                                                        style="background-color:#000d21;color:f0f5ff;padding:24px 16px;border-radius:4px">
+                                                        <a
+                                                          href="https://www.keinoestudio.com/contacto"
+                                                          style="color:#067df7;text-decoration-line:none"
+                                                          target="_blank"
+                                                          ><img
+                                                            src="https://www.keinoestudio.com/assets/next-gen-emails/ng-footer-title.png"
+                                                            style="display:block;outline:none;border:none;text-decoration:none;width:100%;max-width:314px"
+                                                            width="314"
+                                                        /></a>
+                                                        <p
+                                                          style="font-size:14px;line-height:22px;color:#f0f5ff;margin-bottom:2rem;margin-top:16px">
+                                                          En keino estudio<sup
+                                                            style="font-size:6px"
+                                                            >®</sup
+                                                          >
+                                                          nos gusta estar al lado de
+                                                          nuestros clientes y atender
+                                                          cualquier duda o petición que
+                                                          pueda surgir de cara a este
+                                                          proyecto o a cualquier otra
+                                                          necesidad en la que podamos
+                                                          aportar nuestra experiencia. Como
+                                                          siempre, estamos disponibles a
+                                                          través de nuestros canales de
+                                                          comunicación.
+                                                        </p>
+                                                        <p
+                                                          style="font-size:14px;line-height:24px;margin:0.8rem 0;color:#f0f5ff;margin-top:0.8rem;margin-right:0;margin-bottom:0.8rem;margin-left:0">
+                                                          C/ Emilio González López 32, 15011
+                                                          A Coruña
+                                                        </p>
+                                                        <p
+                                                          style="font-size:14px;line-height:24px;margin:0.8rem 0;color:#f0f5ff;margin-top:0.8rem;margin-right:0;margin-bottom:0.8rem;margin-left:0">
+                                                          <a
+                                                            href="tel:+34881170845"
+                                                            style="color:#f0f5ff;text-decoration-line:none"
+                                                            target="_blank"
+                                                            >(+34) 881 17 08 45</a
+                                                          >
+                                                          ·
+                                                          <a
+                                                            href="tel:+34643726383"
+                                                            style="color:#f0f5ff;text-decoration-line:none"
+                                                            target="_blank"
+                                                            >(+34) 643 72 63 83</a
+                                                          >
+                                                        </p>
+                                                        <p
+                                                          style="font-size:14px;line-height:24px;margin:0.8rem 0;color:#f0f5ff;margin-top:0.8rem;margin-right:0;margin-bottom:0.8rem;margin-left:0">
+                                                          <a
+                                                            href="mailto:oficina@keinoestudio.com"
+                                                            style="color:#f0f5ff;text-decoration-line:none"
+                                                            target="_blank"
+                                                            >oficina@keinoestudio.com</a
+                                                          >
+                                                        </p>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                <p
+                                                  style="font-size:14px;line-height:22px;color:#006bff;margin-top:16px;margin-bottom:16px">
+                                                  Recordamos que el horario de atención al
+                                                  público es de lunes a jueves de 9:00 a
+                                                  13:00 y de 15:00 a 18:00 y los viernes de
+                                                  9:30 a 13:30. Desde el 1 de junio hasta el
+                                                  31 de agosto, de lunes a viernes de 8:30 a
+                                                  16:00.
+                                                </p>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <table
+                                  align="center"
+                                  width="100%"
+                                  border="0"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  role="presentation"
+                                  style="padding:12px 24px">
+                                  <tbody style="width:100%">
+                                    <tr style="width:100%">
+                                      <td
+                                        data-id="__react-email-column"
+                                        style="padding:24px 0">
+                                        <a
+                                          href="https://keinoestudio.com/?from=email-footer"
+                                          style="color:#067df7;text-decoration-line:none"
+                                          target="_blank"
+                                          ><img
+                                            src="https://www.keinoestudio.com/assets/next-gen-emails/ng-keino-small.png"
+                                            style="display:block;outline:none;border:none;text-decoration:none;width:126px"
+                                        /></a>
+                                        <p
+                                          style="font-size:12px;line-height:16px;margin-top:16px;margin-bottom:16px">
+                                          En keino estudio<sup style="font-size:6px"
+                                            >®</sup
+                                          >
+                                          somos respetuosos con la privacidad y los datos de
+                                          nuestra comunidad. Para más información, visita
+                                          nuestra
+                                          <a
+                                            href="https://www.keinoestudio.com/politica-privacidad"
+                                            style="color:#067df7;text-decoration-line:none"
+                                            target="_blank"
+                                            >política de privacidad</a
+                                          >.
+                                        </p>
+                                        <ul
+                                          style="color:#000d21;font-size:20px;list-style:none;padding:0">
+                                          <li
+                                            style="display:inline-block;padding-right:24px;color:#000d21;margin:0">
+                                            <a
+                                              href="https://www.linkedin.com/company/keinoestudio"
+                                              style="color:#000d21;text-decoration-line:none"
+                                              target="_blank"
+                                              >IN</a
+                                            >
+                                          </li>
+                                          <li
+                                            style="display:inline-block;padding-right:24px;color:#000d21;margin:0">
+                                            <a
+                                              href="https://www.instagram.com/keinoestudio/"
+                                              style="color:#000d21;text-decoration-line:none"
+                                              target="_blank"
+                                              >IG</a
+                                            >
+                                          </li>
+                                          <li
+                                            style="display:inline-block;padding-right:24px;color:#000d21;margin:0">
+                                            <a
+                                              href="https://github.com/keinoestudio"
+                                              style="color:#000d21;text-decoration-line:none"
+                                              target="_blank"
+                                              >GH</a
+                                            >
+                                          </li>
+                                          <li
+                                            style="display:inline-block;padding-right:24px;color:#000d21;margin:0">
+                                            <a
+                                              href="https://www.behance.net/keinoestudio"
+                                              style="color:#000d21;text-decoration-line:none"
+                                              target="_blank"
+                                              >BE</a
+                                            >
+                                          </li>
+                                          <li
+                                            style="display:inline-block;padding-right:24px;color:#000d21;margin:0">
+                                            <a
+                                              href="https://www.youtube.com/@keinoestudio"
+                                              style="color:#000d21;text-decoration-line:none"
+                                              target="_blank"
+                                              >YT</a
+                                            >
+                                          </li>
+                                        </ul>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--/$-->
+              </body>
+            </html>
+            `
 }
 
 export default projectStarted

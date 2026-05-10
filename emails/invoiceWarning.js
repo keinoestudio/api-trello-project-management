@@ -1,8 +1,6 @@
-import queryfyDate from"../utils/queryfyDate.js"
+const invoiceWarning = (cardDetails) => {
 
-const projectDelivered = (cardDetails) => {
-   
-    const link = `https://keinoestudio.com/permanent/templates/emails/project-started?name=${cardDetails.name}&invoiceTime=${cardDetails.invoiceTime}&invoiceDate=${queryfyDate(cardDetails.invoiceDate)}&warrantyTime=${cardDetails.warrantyTime}&warrantyDate=${queryfyDate(cardDetails.warrantyDate)}&invoice=${cardDetails.invoice}&promo=${cardDetails.securityPromo}`
+    const link = `https://keinoestudio.com/permanent/templates/emails/project-started?invoice=${cardDetails.invoice}&invoiceAmount=${cardDetails.invoiceAmount}&debtAmount=${cardDetails.debtAmount}`
 
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html dir="ltr" lang="en">
@@ -11,10 +9,6 @@ const projectDelivered = (cardDetails) => {
                 rel="preload"
                 as="image"
                 href="https://www.keinoestudio.com/assets/next-gen-emails/ng-email-header.png" />
-                <link
-                rel="preload"
-                as="image"
-                href="https://www.keinoestudio.com/assets/next-gen-emails/ng-security-promo.png" />
                 <link
                 rel="preload"
                 as="image"
@@ -27,7 +21,8 @@ const projectDelivered = (cardDetails) => {
                 <meta name="x-apple-disable-message-reformatting" />
             </head>
             <body style="background-color:#E0DBDB">
-                <!--$--><!--html--><!--head--><!--body-->
+                <!--$--><!--html--><!--head-->
+                <!--body-->
                 <table
                 border="0"
                 width="100%"
@@ -97,7 +92,22 @@ const projectDelivered = (cardDetails) => {
                                             <tr style="width:100%">
                                             <td
                                                 data-id="__react-email-column"
-                                                style="padding:24px;background-color:#f0f5ff;border-radius:8px">
+                                                style="height:12px;background-color:#FE4141;border-radius:8px 8px 0 0"></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                        <table
+                                        align="center"
+                                        width="100%"
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation">
+                                        <tbody style="width:100%">
+                                            <tr style="width:100%">
+                                            <td
+                                                data-id="__react-email-column"
+                                                style="padding:24px;background-color:#f0f5ff;border-radius:0 0 8px 8px">
                                                 <a
                                                 href="https://keinoestudio.com/?from=email-header"
                                                 style="color:#067df7;text-decoration-line:none"
@@ -110,112 +120,69 @@ const projectDelivered = (cardDetails) => {
                                                 /></a>
                                                 <h1
                                                 style="color:#006bff;font-size:22px;font-weight:normal;padding:12px 0">
-                                                Hemos finalizado todas las tareas de este
-                                                proyecto.
+                                                Recordatorio de factura pendiente.
                                                 </h1>
                                                 <p
-                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                Este email se envía a modo informativo
-                                                para comunicar que las tareas asociadas al
-                                                proyecto
-                                                <span style="color:#006bff"
-                                                    >${cardDetails.name}</span
-                                                > han finalizado. Esperamos haber estado a
-                                                la altura de las expectativas.
+                                                style="font-size:18px;line-height:24px;color:#000d21;margin-top:16px;margin-bottom:16px">
+                                                — El plazo de abono de una factura
+                                                pendiente ha vencido.
                                                 </p>
                                                 <p
                                                 style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                En este momento, comienza el periodo de
-                                                garantía cuya cobertura se detalla en el
-                                                contrato, que tiene una extensión de ${cardDetails.warrantyTime}
-                                                días naturales a partir de hoy mismo, por
-                                                lo que su caducidad se fija en fecha de
-                                                <span style="color:#006bff"
-                                                    >${cardDetails.warrantyDate}</span
-                                                >. Nos ponemos a disposición para atender
-                                                cualquier consulta relacionada con este
-                                                asunto.
-                                                </p>
-                                                <p
-                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                En este correo adjuntamos también el
-                                                resumen de acciones y tareas que detalla
-                                                nuestra intervención y el certificado de
-                                                garantía, así como la factura <span
-                                                    style="color:#006bff"
+                                                Enviamos este email para informar de que
+                                                el plazo acordado para el abono de la
+                                                factura <span style="color:#006bff"
                                                     >${cardDetails.invoice}</span
-                                                > cuyo importe debe abonarse en un plazo
-                                                máximo de ${cardDetails.invoiceTime} días naturales, en este caso,
-                                                antes del <span style="color:#006bff"
-                                                    >${cardDetails.invoiceDate}</span
+                                                > por valor de <span style="color:#006bff"
+                                                    >${cardDetails.invoiceAmount}</span
+                                                > ha vencido y el importe se suma a la
+                                                cuenta de deuda, cuyo valor actual es de:
+                                                </p>
+                                                <p
+                                                style="font-size:32px;line-height:24px;color:#FE4141;margin-top:16px;margin-bottom:16px">
+                                                -${cardDetails.debtAmount}
+                                                </p>
+                                                <p
+                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                Sabemos de la complejidad de los asuntos
+                                                financieros, pero defendemos el orden y la
+                                                transparencia en las relaciones
+                                                profesionales. Por eso, ante cualquier
+                                                inconveniente o duda, siempre invitamos a
+                                                contactar con nosotros a través de <a
+                                                    href="mailto:oficina@keinoestudio.com"
+                                                    title="Email de administración de keino estudio"
+                                                    style="color:#067df7;text-decoration-line:none"
+                                                    target="_blank"
+                                                    ><span style="color:#006bff"
+                                                    >oficina@keinoestudio.com</span
+                                                    ></a
+                                                > para valorar la situación y encontrar
+                                                una solución conjunta.
+                                                </p>
+                                                <p
+                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                Recordamos también, que nuestra política
+                                                de deuda limita la firma de nuevos
+                                                acuerdos dependiendo de la cantidad a
+                                                deber. Esta política está disponible y se
+                                                puede consultar en <a
+                                                    href="https://www.keinoestudio.com/politica-de-deudas"
+                                                    title="Acceso a la política de deuda de keino estudio"
+                                                    style="color:#067df7;text-decoration-line:none"
+                                                    target="_blank"
+                                                    ><span style="color:#006bff"
+                                                    >este enlace</span
+                                                    ></a
                                                 >.
                                                 </p>
                                                 <p
                                                 style="font-size:18px;line-height:22px;padding-bottom:24px;color:#006bff;margin-top:16px;margin-bottom:16px">
-                                                Gracias por confiar en keino estudio<sup style="font-size: 10px"
+                                                Gracias por confiar en keino estudio<sup
+                                                    style="font-size:10px"
                                                     >®</sup
                                                 >
                                                 </p>
-                                                ${cardDetails.securityPromo ? `<table
-                                                align="center"
-                                                width="100%"
-                                                border="0"
-                                                cellpadding="0"
-                                                cellspacing="0"
-                                                role="presentation"
-                                                id="promo-block">
-                                                <tbody style="width:100%">
-                                                    <tr style="width:100%">
-                                                    <td data-id="__react-email-column">
-                                                        <p
-                                                        style="font-size:20px;line-height:24px;color:#000d21;margin-top:16px;margin-bottom:16px">
-                                                        Próximos pasos.
-                                                        </p>
-                                                        <img
-                                                        title="seguridad"
-                                                        alt="Teclado de un ordenador con un candado"
-                                                        src="https://www.keinoestudio.com/assets/next-gen-emails/ng-security-promo.png"
-                                                        style="display:block;outline:none;border:none;text-decoration:none;width:100%"
-                                                        width="520" />
-                                                        <p
-                                                        style="font-size:16px;line-height:24px;color:#006bff;margin-top:16px;margin-bottom:16px">
-                                                        No des por segura tu web si no has
-                                                        comprobado cada punto crítico.
-                                                        </p>
-                                                        <p
-                                                        style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                        Recuerdamos que en keino
-                                                        estudio<sup style="font-size:6px"
-                                                            >®</sup
-                                                        >
-                                                        realizamos auditorías de seguridad
-                                                        para revisar a fondo el estado de
-                                                        tu web: vulnerabilidades,
-                                                        configuraciones, accesos y
-                                                        posibles puntos críticos. Es una
-                                                        forma directa de asegurarte de que
-                                                        todo está bajo control antes de
-                                                        que surjan problemas.
-                                                        </p>
-                                                        <p
-                                                        style="font-size:14px;line-height:24px;margin-top:16px;margin-bottom:16px">
-                                                        Que todo funcione correctamente
-                                                        hoy no garantiza que siga siendo
-                                                        así mañana. La mayoría de
-                                                        incidencias de seguridad aparecen
-                                                        cuando el sitio se descuida
-                                                        durante meses.
-                                                        </p>
-                                                        <p
-                                                        style="font-size:14px;line-height:24px;margin-top:16px;margin-bottom:16px">
-                                                        Si quieres que revisemos tu sitio,
-                                                        puedes escribirnos y lo vemos
-                                                        contigo.
-                                                        </p>
-                                                    </td>
-                                                    </tr>
-                                                </tbody>
-                                                </table>` : ``}
                                                 <table
                                                 align="center"
                                                 width="100%"
@@ -328,9 +295,7 @@ const projectDelivered = (cardDetails) => {
                                         /></a>
                                         <p
                                         style="font-size:12px;line-height:16px;margin-top:16px;margin-bottom:16px">
-                                        En keino estudio<sup style="font-size:6px"
-                                            >®</sup
-                                        >
+                                        En keino estudio<sup style="font-size:6px">®</sup>
                                         somos respetuosos con la privacidad y los datos de
                                         nuestra comunidad. Para más información, visita
                                         nuestra
@@ -406,5 +371,4 @@ const projectDelivered = (cardDetails) => {
             </html>
             `
 }
-
-export default projectDelivered
+export default invoiceWarning

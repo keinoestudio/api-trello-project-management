@@ -1,8 +1,6 @@
-import queryfyDate from"../utils/queryfyDate.js"
+const invoicePaid = (cardDetails) => {
 
-const projectDelivered = (cardDetails) => {
-   
-    const link = `https://keinoestudio.com/permanent/templates/emails/project-started?name=${cardDetails.name}&invoiceTime=${cardDetails.invoiceTime}&invoiceDate=${queryfyDate(cardDetails.invoiceDate)}&warrantyTime=${cardDetails.warrantyTime}&warrantyDate=${queryfyDate(cardDetails.warrantyDate)}&invoice=${cardDetails.invoice}&promo=${cardDetails.securityPromo}`
+    const link = `https://keinoestudio.com/permanent/templates/emails/project-started?invoice=${cardDetails.invoice}`
 
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html dir="ltr" lang="en">
@@ -14,7 +12,7 @@ const projectDelivered = (cardDetails) => {
                 <link
                 rel="preload"
                 as="image"
-                href="https://www.keinoestudio.com/assets/next-gen-emails/ng-security-promo.png" />
+                href="https://www.keinoestudio.com/assets/next-gen-emails/ng-newsletter-promo.png" />
                 <link
                 rel="preload"
                 as="image"
@@ -110,45 +108,27 @@ const projectDelivered = (cardDetails) => {
                                                 /></a>
                                                 <h1
                                                 style="color:#006bff;font-size:22px;font-weight:normal;padding:12px 0">
-                                                Hemos finalizado todas las tareas de este
-                                                proyecto.
+                                                Aquí tienes tu recibo.
                                                 </h1>
+                                                <p
+                                                style="font-size:18px;line-height:24px;color:#000d21;margin-top:16px;margin-bottom:16px">
+                                                — Esperamos haber estado a la altura.
+                                                </p>
                                                 <p
                                                 style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
                                                 Este email se envía a modo informativo
-                                                para comunicar que las tareas asociadas al
-                                                proyecto
+                                                para comunicar que hemos recibido el pago
+                                                de la factura
                                                 <span style="color:#006bff"
-                                                    >${cardDetails.name}</span
-                                                > han finalizado. Esperamos haber estado a
-                                                la altura de las expectativas.
-                                                </p>
-                                                <p
-                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                En este momento, comienza el periodo de
-                                                garantía cuya cobertura se detalla en el
-                                                contrato, que tiene una extensión de ${cardDetails.warrantyTime}
-                                                días naturales a partir de hoy mismo, por
-                                                lo que su caducidad se fija en fecha de
-                                                <span style="color:#006bff"
-                                                    >${cardDetails.warrantyDate}</span
-                                                >. Nos ponemos a disposición para atender
-                                                cualquier consulta relacionada con este
-                                                asunto.
-                                                </p>
-                                                <p
-                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                En este correo adjuntamos también el
-                                                resumen de acciones y tareas que detalla
-                                                nuestra intervención y el certificado de
-                                                garantía, así como la factura <span
-                                                    style="color:#006bff"
                                                     >${cardDetails.invoice}</span
-                                                > cuyo importe debe abonarse en un plazo
-                                                máximo de ${cardDetails.invoiceTime} días naturales, en este caso,
-                                                antes del <span style="color:#006bff"
-                                                    >${cardDetails.invoiceDate}</span
-                                                >.
+                                                > y consideramos este servicio finalizado.
+                                                </p>
+                                                <p
+                                                style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
+                                                En este correo adjuntamos el recibo
+                                                correspondiente. Esperamos haber cumplido
+                                                las expectativas y deseamos volver a
+                                                contar con tu confianza.
                                                 </p>
                                                 <p
                                                 style="font-size:18px;line-height:22px;padding-bottom:24px;color:#006bff;margin-top:16px;margin-bottom:16px">
@@ -156,7 +136,7 @@ const projectDelivered = (cardDetails) => {
                                                     >®</sup
                                                 >
                                                 </p>
-                                                ${cardDetails.securityPromo ? `<table
+                                                <table
                                                 align="center"
                                                 width="100%"
                                                 border="0"
@@ -169,53 +149,54 @@ const projectDelivered = (cardDetails) => {
                                                     <td data-id="__react-email-column">
                                                         <p
                                                         style="font-size:20px;line-height:24px;color:#000d21;margin-top:16px;margin-bottom:16px">
-                                                        Próximos pasos.
+                                                        Te mantenemos al día.
                                                         </p>
                                                         <img
                                                         title="seguridad"
                                                         alt="Teclado de un ordenador con un candado"
-                                                        src="https://www.keinoestudio.com/assets/next-gen-emails/ng-security-promo.png"
+                                                        src="https://www.keinoestudio.com/assets/next-gen-emails/ng-newsletter-promo.png"
                                                         style="display:block;outline:none;border:none;text-decoration:none;width:100%"
                                                         width="520" />
                                                         <p
                                                         style="font-size:16px;line-height:24px;color:#006bff;margin-top:16px;margin-bottom:16px">
-                                                        No des por segura tu web si no has
-                                                        comprobado cada punto crítico.
+                                                        Apúntate a nuestra newsletter para
+                                                        recibir consejos y ofertas.
                                                         </p>
                                                         <p
                                                         style="font-size:14px;line-height:20px;margin-top:16px;margin-bottom:16px">
-                                                        Recuerdamos que en keino
-                                                        estudio<sup style="font-size:6px"
+                                                        Publicamos periódicamente un
+                                                        boletín que recoge novedades
+                                                        tecnológicas, consejos prácticos y
+                                                        anuncios de interés relacionados
+                                                        con keino estudio<sup
+                                                            style="font-size:6px"
                                                             >®</sup
+                                                        >.
+                                                        </p>
+                                                        <p
+                                                        style="font-size:14px;line-height:24px;margin-top:16px;margin-bottom:16px">
+                                                        Suscríbete y mantente al día con
+                                                        nosotros. Es gratuíta y puedes
+                                                        cancelar la suscripción cuando
+                                                        quieras.
+                                                        </p>
+                                                        <a
+                                                        href="https://keinoestudio.com/newsletter"
+                                                        style="line-height:100%;text-decoration:none;display:inline-block;max-width:100%;mso-padding-alt:0px;color:#f0f5ff;background-color:#006bff;padding:12px 24px;border-radius:4px;margin:12px 0 24px;padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px"
+                                                        target="_blank"
+                                                        ><span
+                                                            ><!--[if mso]><i style="mso-font-width:400%;mso-text-raise:18" hidden>&#8202;&#8202;&#8202;</i><![endif]--></span
+                                                        ><span
+                                                            style="max-width:100%;display:inline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:9px"
+                                                            >Apúntate aquí</span
+                                                        ><span
+                                                            ><!--[if mso]><i style="mso-font-width:400%" hidden>&#8202;&#8202;&#8202;&#8203;</i><![endif]--></span
+                                                        ></a
                                                         >
-                                                        realizamos auditorías de seguridad
-                                                        para revisar a fondo el estado de
-                                                        tu web: vulnerabilidades,
-                                                        configuraciones, accesos y
-                                                        posibles puntos críticos. Es una
-                                                        forma directa de asegurarte de que
-                                                        todo está bajo control antes de
-                                                        que surjan problemas.
-                                                        </p>
-                                                        <p
-                                                        style="font-size:14px;line-height:24px;margin-top:16px;margin-bottom:16px">
-                                                        Que todo funcione correctamente
-                                                        hoy no garantiza que siga siendo
-                                                        así mañana. La mayoría de
-                                                        incidencias de seguridad aparecen
-                                                        cuando el sitio se descuida
-                                                        durante meses.
-                                                        </p>
-                                                        <p
-                                                        style="font-size:14px;line-height:24px;margin-top:16px;margin-bottom:16px">
-                                                        Si quieres que revisemos tu sitio,
-                                                        puedes escribirnos y lo vemos
-                                                        contigo.
-                                                        </p>
                                                     </td>
                                                     </tr>
                                                 </tbody>
-                                                </table>` : ``}
+                                                </table>
                                                 <table
                                                 align="center"
                                                 width="100%"
@@ -407,4 +388,4 @@ const projectDelivered = (cardDetails) => {
             `
 }
 
-export default projectDelivered
+export default invoicePaid
