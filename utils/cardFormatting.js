@@ -20,6 +20,8 @@ const cardFormatting = ( cardDetails ) => {
         "securityPromo": setDefault(cardDetails.customFields["69fa817dad4a2eacd1a3d48f"]?.value, false),
         "financingPromo": setDefault(cardDetails.customFields["69fb22771a146037f60613d3"]?.value, false),
         "invoice": setDefault(cardDetails.customFields["69fa71538bd043c8297952a5"]?.value, "[Invoice number]"),
+        "invoiceAmount": setDefault(cardDetails.customFields["69fb22a1e5d9f87e08728048"]?.value.replace(".", ",") + "€", null),
+        "debtAmount": setDefault(cardDetails.customFields["69fb22ac35ed5f03f52736de"]?.value.replace(".", ",") + "€", null),
     }
     return formattedData
 }
