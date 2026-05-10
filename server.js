@@ -82,7 +82,7 @@ server.post(`/${webhook}`, async (req, res) => {
 
         try{
             const cardDetails = await getCardDetails(cardId);
-            // await sendEmailForCard(cardDetails, newListID, transporter);
+            await sendEmailForCard(cardDetails, newListID, transporter);
         }catch(error){
             console.error(`Error at card processing ${cardName}:`, error.message);
         }
@@ -97,6 +97,6 @@ server.listen(port, host, () => {
 })
 
 
-//expose app with ngrok
-ngrok.connect({ addr: port, authtoken_from_env: true })
-	.then(listener => console.log(`Ingress established at: ${listener.url()}`));
+// //expose app with ngrok
+// ngrok.connect({ addr: port, authtoken_from_env: true })
+// 	.then(listener => console.log(`Ingress established at: ${listener.url()}`));
