@@ -6,6 +6,8 @@ import htmlBuilder from "./htmlBuilder.js";
 
 async function sendEmailForCard(cardDetails, targetListID, transporter) {
 
+    console.log('aqui entra')
+
     const emails = extractEmailsFromCustomFields(cardDetails.customFields);
     const attachments = []
 
