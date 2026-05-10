@@ -71,9 +71,18 @@ async function sendEmailForCard(cardDetails, targetListID, transporter) {
         cc: emails.cc.length > 0 ? emails.cc.join(', ') : undefined,
         bcc: 'oficina@keinoestudio.com',
         subject: subject,
-        // html: htmlContent,
         html: htmlContent,
-        attachments: attachments
+        attachments: attachments,
+        priority: 'high',
+        headers: {
+            'Disposition-Notification-To': 'oficina@keinoestudio.com'
+        },
+        dsn: {
+            id: 'trello-delivery-status',
+            return: 'headers',
+            notify: ['success', 'failure', 'delay'],
+            recipient: 'oficina@keinoestudio.com'
+        }
     };
 
     if (!mailOptions.cc) {
